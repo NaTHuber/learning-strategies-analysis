@@ -36,12 +36,75 @@ Las siguientes notas son mis apuntes personales del proyecto, las cuales me ayud
 
 ## Mapeo de columnas del dataset con factores del cuestionario
 
-El documento indica que los ítems (GA1 a GA19) se agrupan así:
+El documento _GAEU-1 Scale Questionnaire_ indica que los ítems (GA1 a GA19) se agrupan así:
 
 |Factor|	Items relacionados|
 |------|-----------------------|
-|Academic performance perception|	GA1, GA5, GA12, GA15|
-|Self-Regulated Learning|	GA2, GA3, GA4, GA6, GA13, GA14|
-|Conscious learning motivation strategies|	GA7, GA8, GA9, GA10, GA11|
-|Deep learning techniques|	GA16, GA17, GA18, GA19|
+|Academic performance perception _(Percepción del rendimiento académico)_|	GA1, GA5, GA12, GA15|
+|Self-Regulated Learning _(Autogestión del aprendizaje)_|	GA2, GA3, GA4, GA6, GA13, GA14|
+|Conscious learning motivation strategies _(Estrategias de motivación consciente para el aprendizaje)_|	GA7, GA8, GA9, GA10, GA11|
+|Deep learning techniques (_Técnicas de aprendizaje profundo_)|	GA16, GA17, GA18, GA19|
 
+Con esto se renombraron a los items para que tuvieran un nombre más descriptivo 
+```
+    'GA1': 'perf_vs_others',
+    'GA2': 'prep_materials',
+    'GA3': 'study_space',
+    'GA4': 'autonomous_learning',
+    'GA5': 'perf_vs_grades',
+    'GA6': 'academic_responsibility',
+    'GA7': 'self_motivation_words',
+    'GA8': 'motivation_difficulties',
+    'GA9': 'optimism',
+    'GA10': 'motivation_future',
+    'GA11': 'positive_academic_outlook',
+    'GA12': 'perf_satisfaction',
+    'GA13': 'time_management',
+    'GA14': 'problem_solving',
+    'GA15': 'learn_ability',
+    'GA16': 'deep_techniques_1',
+    'GA17': 'deep_techniques_2',
+    'GA18': 'deep_techniques_3',
+    'GA19': 'deep_techniques_4',
+```
+
+### Matrices de correlación 
+Se crearon columnas de promedio por factor para **resumir el comportamiento de ese factor como una sola variable** y facilitar el análisis estadistico.
+
+|Factor asociado|Nombre de la columna|Items|
+|-------|---------------------|--------------------|
+|Percepción del rendimiento académico|avg_performance_perception | `'perf_vs_others', 'perf_vs_grades', 'perf_satisfaction', 'learn_ability'`|
+|Autogestión del aprendizaje|avg_self_regulated_learning|`'prep_materials', 'study_space', 'autonomous_learning', 'academic_responsibility', 'time_management', 'problem_solving'`|
+|Estrategias de motivación conciente para el aprendizaje|avg_motivation| `'self_motivation_words', 'motivation_difficulties', 'optimism', 'motivation_future', 'positive_academic_outlook'` |
+|Técnicas de aprendizaje profundo|avg_deep_learning| `'deep_techniques_1', 'deep_techniques_2', 'deep_techniques_3', 'deep_techniques_4' ` |
+
+Recordando que `perf_vs_others` es:
+
+>  Considero que mi rendimiento académico es igual o mejor que el de mis compañeros.
+
+Se van a mostrar las correlaciones de esta variable con los promedios de los otros factores 
+
+![alt text](img/matriz-correlacion-perf_vs_others.png)
+
+
+Por lo que se tiene que: 
+
+- La **autogestión del aprendizaje** (`avg_self_regulated_learning`) es el factor más correlacionado con el **rendimiento percibido en comparación con otros** (``perf_vs_others``). 
+
+- `avg_motivation` y `avg_deep_learning` también ayudan, pero menos.
+
+- `avg_self_regulated_learning` y `avg_deep_learning` están fuertemente relacionados (0.6).
+
+- `avg_motivation` también se conecta con ambos (0.5–0.56), lo cual sugiere que estos estilos de aprendizaje se retroalimentan.
+
+
+También se hizo la matriz de correlación entre `avg_performance_perception` para tener un panoráma más amplio del **rendimiento percibido en general**, obteniendo los siguientes resultados:
+
+![alt text](img/matriz-correlacion-avg_permonace_perception.png)
+
+
+| Variable | Correlación | Nivel           |
+| ----------------------------------------- | ----------- | --------------- |
+| `avg_self_regulated_learning`             | **0.59**    | Moderada-fuerte |
+| `avg_motivation`                          | 0.49        | Moderada        |
+| `avg_deep_learning`                       | 0.44        | Moderada        |
