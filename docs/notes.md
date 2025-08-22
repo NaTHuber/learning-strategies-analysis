@@ -70,7 +70,7 @@ Con esto se renombraron a los items para que tuvieran un nombre más descriptivo
     'GA19': 'deep_techniques_4',
 ```
 
-### Matrices de correlación 
+## Matrices de correlación 
 Se crearon columnas de promedio por factor para **resumir el comportamiento de ese factor como una sola variable** y facilitar el análisis estadistico.
 
 |Factor asociado|Nombre de la columna|Items|
@@ -104,6 +104,10 @@ También se hizo la matriz de correlación entre `avg_performance_perception` pa
 
 ![alt text](img/matriz-correlacion-avg_permonace_perception.png)
 
+**Tendencia + Dispersión**
+![alt text](img/tendencia-dispersion.png)
+
+
 
 | Variable | Correlación | Nivel           |Primeras observaciones|
 | ----------------------------------------- | ----------- | --------------- |------|
@@ -115,5 +119,13 @@ En esta segunda matriz las correlaciones son más altas porque estás midiendo l
 
 Por lo que los datos muestran que los estudiantes que puntúan alto en estrategias de autogestión (como organizar su espacio, tiempo y asumir responsabilidades) también tienden a evaluarse como buenos estudiantes. Esta relación es más fuerte que la que existe con la motivación o el uso de técnicas profundas. Esto sugiere que, para mejorar el **rendimiento académico percibido**, intervenir en **habilidades de autogestión** puede ser más efectivo que enfocarse exclusivamente en motivación o técnicas de estudio.
 
+## Modelo de regresión lineal múltiple
+Finalmente se aplicó un modelo de regresión lineal múltiple para poder:
+
+- Cuantificar cuánto aporta cada factor (autogestión, motivación, técnicas profundas) al **rendimiento percibido**.
+
+- Ver qué tan bien el modelo explica la **variación en la percepción del rendimiento**.
+
+- Entender cómo se interpreta cada coeficiente en contexto.
 
 
