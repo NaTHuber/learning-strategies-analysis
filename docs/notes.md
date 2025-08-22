@@ -32,6 +32,8 @@ Las siguientes notas son mis apuntes personales del proyecto, las cuales me ayud
 
 - **URL:** https://data.mendeley.com/datasets/7vgyndhb87/5
 
+- **Cita completa:** Ramos-Galarza, Carlos; Obregón, Jennifer; Lepe-Martínez, Nancy; Del Valle, Milenko (2025), “Learning Strategies in Higher Education: A Research Dataset”, Mendeley Data, V5, doi: 10.17632/7vgyndhb87.5
+
 
 
 ## Mapeo de columnas del dataset con factores del cuestionario
@@ -103,8 +105,15 @@ También se hizo la matriz de correlación entre `avg_performance_perception` pa
 ![alt text](img/matriz-correlacion-avg_permonace_perception.png)
 
 
-| Variable | Correlación | Nivel           |
-| ----------------------------------------- | ----------- | --------------- |
-| `avg_self_regulated_learning`             | **0.59**    | Moderada-fuerte |
-| `avg_motivation`                          | 0.49        | Moderada        |
-| `avg_deep_learning`                       | 0.44        | Moderada        |
+| Variable | Correlación | Nivel           |Primeras observaciones|
+| ----------------------------------------- | ----------- | --------------- |------|
+| `avg_self_regulated_learning`             | **0.59**    |  Moderada-fuerte | Cuanto más una persona organiza su espacio, su tiempo y se hace responsable de su aprendizaje, más tiende a evaluarse a sí misma como buena estudiante.|
+| `avg_motivation`                          | 0.49        | Moderada        |Frases internas como “puedo hacerlo” o “tengo planes para el futuro” parecen estar ligadas a una percepción positiva del rendimiento.|
+| `avg_deep_learning`                       | 0.44        | Moderada        |El uso de resúmenes, mapas conceptuales, lectura crítica, etc., está correlacionado con el rendimiento percibido, aunque menos que la autogestión|
+
+En esta segunda matriz las correlaciones son más altas porque estás midiendo la **percepción general de rendimiento con más de un ítem**, lo que hace la señal más robusta.
+
+Por lo que los datos muestran que los estudiantes que puntúan alto en estrategias de autogestión (como organizar su espacio, tiempo y asumir responsabilidades) también tienden a evaluarse como buenos estudiantes. Esta relación es más fuerte que la que existe con la motivación o el uso de técnicas profundas. Esto sugiere que, para mejorar el **rendimiento académico percibido**, intervenir en **habilidades de autogestión** puede ser más efectivo que enfocarse exclusivamente en motivación o técnicas de estudio.
+
+
+
