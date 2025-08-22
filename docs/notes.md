@@ -2,6 +2,7 @@
 
 Las siguientes notas son mis apuntes personales del proyecto, las cuales me ayudaron a entender, organizar y estructurar mis ideas durante el desarrollo de este. 
 
+## Información importante 
 **Nombre del proyecto:** Estrategias de aprendizaje y su relación con el rendimiento.
 
 **Categoría:** Educación y aprendizaje 
@@ -127,5 +128,54 @@ Finalmente se aplicó un modelo de regresión lineal múltiple para poder:
 - Ver qué tan bien el modelo explica la **variación en la percepción del rendimiento**.
 
 - Entender cómo se interpreta cada coeficiente en contexto.
+
+Para esto se va a llevar a cabo el siguiente proceso en código 
+
+```mermaid
+graph LR
+    A[Definir variables predictoras _X_ y variables objetivo _y_ ] --> B[Crear y entrenar el modelo]
+    B-->C[Obtener coeficientes y métricas]
+    C-->D[Interpretar resultados]
+```
+Definiendo nuestras variables
+
+- **X:** `'avg_self_regulated_learning', 'avg_motivation', 'avg_deep_learning'`
+- **y:** `avg_performance_perception`
+
+Se crea y entrena el modelo 
+```python
+ model = LinearRegression()
+ model.fit(X, y)
+```
+Para las metricas se presentará el $R^2$ y el error cuadrático medio RSME
+### Resultados 
+Deespués del entrenamiento se obtuvieron los siguientes resultados:
+
+**La ecuación lineal**
+```
+Rendimiento_percibido = 
+    1.08 
+  + 0.427 * avg_self_regulated_learning
+  + 0.193 * avg_motivation
+  + 0.068 * avg_deep_learning
+```
+
+| Variable | Coeficiente |Interpretación|
+| --------------------------------- | ----------- | -------------------------------------------------------------------------|
+| **Intercepto**| 1.08 | Es la base del modelo cuando los predictores están en 0 (no tiene sentido práctico en escalas Likert que es con las que se están trabajando en el dataset).                                    |
+| **`avg_self_regulated_learning`** | **0.427**   | Es el **predictor más fuerte**. Cada punto adicional en autogestión aumenta el rendimiento percibido en **0.427 unidades**, manteniendo las demás variables constantes. |
+| **`avg_motivation`**              | 0.193       | Aporta positivamente, aunque con menor fuerza. |
+| **`avg_deep_learning`**           | 0.068       | Aporta muy poco en comparación: casi no cambia el rendimiento percibido. |
+
+El modelo explica el **39.1%** de la variabilidad en el rendimiento percibido de acuerdo al resultado del $R^2$. Para el caso del error promedio de predicción es de **medio punto** en la escala de 1 a 5.
+
+## Conclusiones 
+Los resultados del modelo de regresión lineal muestran que la **autogestión del aprendizaje es el factor que más influye en la percepción de rendimiento académico de los estudiantes**, con un coeficiente de 0.427, lo que refuerza el resultado obtenido de 0.59 en la sección de correlaciones. 
+
+La motivación consciente también tiene un efecto positivo, aunque menor (coef. 0.193), mientras que el uso de técnicas profundas de estudio, como mapas conceptuales o lectura crítica, tiene un impacto débil (coef. 0.068). 
+
+Finalmente el modelo explica cerca del 39% de la variabilidad del rendimiento percibido (R² = 0.391), lo cual se puede considerarse significativo en estudios de percepción y autoevaluación. Este hallazgo sugiere que **intervenir en estrategias de autogestión puede tener un mayor impacto en la percepción de éxito académico que enfocarse solamente en la motivación o en técnicas aisladas de estudio.**
+
+
 
 
