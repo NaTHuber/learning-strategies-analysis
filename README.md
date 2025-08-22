@@ -23,6 +23,7 @@ Explorar la relación entre distintos factores psicológicos de aprendizaje y el
 - Autogestión del aprendizaje
 - Estrategias de motivación consciente
 - Técnicas de aprendizaje profundo
+
 **Fecha de publicación:** 21 Julio 2025
 
 ---
