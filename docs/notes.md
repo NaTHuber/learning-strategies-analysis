@@ -176,6 +176,9 @@ La motivación consciente también tiene un efecto positivo, aunque menor (coef.
 
 Finalmente el modelo explica cerca del 39% de la variabilidad del rendimiento percibido (R² = 0.391), lo cual se puede considerarse significativo en estudios de percepción y autoevaluación. Este hallazgo sugiere que **intervenir en estrategias de autogestión puede tener un mayor impacto en la percepción de éxito académico que enfocarse solamente en la motivación o en técnicas aisladas de estudio.**
 
+## Nota personal final
+Este proyecto no sólo me permitió aplicar herramientas estadísticas y modelos de machine learning en un contexto educativo, sino también comprender un poquito más cómo aprenden las personas y cómo esas estrategias impactan en su percepción del propio rendimiento, lo cual considero muy interesante🌱
+
 
 
 
